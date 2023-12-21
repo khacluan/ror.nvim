@@ -28,7 +28,7 @@ function M.list_commands()
 
   vim.ui.select(
     {
-      "Generate model", "Generate controller", "Generate migration", "Generate mailer", "Generate system test",
+      "Generate model", "Generate controller", "Generate serializer", "Generate migration", "Generate mailer", "Generate system test",
       "Find models", "Find controllers", "Find views", "Find model tests", "Find controller tests", "Find system tests", "Find migrations",
       "Test current file", "Test current line", "Clear test result", "Toggle test terminal",
       "Show file coverage", "Hide file coverage",
@@ -44,6 +44,8 @@ function M.list_commands()
         require("ror.generators.model").generate(close_floating_window)
       elseif command == "Generate controller" then
         require("ror.generators.controller").generate(close_floating_window)
+      elseif command == "Generate serializer" then
+        require("ror.generators.serializer").generate(close_floating_window)
       elseif command == "Generate migration" then
         require("ror.generators.migration").generate(close_floating_window)
       elseif command == "Generate mailer" then
